@@ -7,3 +7,13 @@ td img {
     width: 100%;
     height: 200px;
 }
+
+.container-fluid .navbar-brand{
+    font-family: 'Oswald', sans-serif;
+    font-size: 34px;
+}
+
+.navbar-nav .nav-item{
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+}

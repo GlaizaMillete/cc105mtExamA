@@ -1,14 +1,14 @@
-<h2 *ngIf="editMode==false">Add</h2>
+<h2 *ngIf="editMode==false">&nbsp;Add</h2>
 <h2 *ngIf="editMode==true">Edit</h2>
 <form (ngSubmit)="onSubmit()" [formGroup]="form">
-    <div>
-        <div> 
-            <label for="name">Name</label><br>
+    <div style="width: 45%;">
+        <div>
+            <label for="name"> &ensp; Name</label><br>
             <input type="text" class="form-control" id="inputName" placeholder="Name" formControlName="name" >
         </div>
 
         <div>
-            <label for="brand">Brand</label><br>  
+            <label for="brand">&nbsp;Brand</label><br>  
             <select class="form-control" placeholder="Brand" formControlName="brand">
                 <optgroup label="PH Brand">
                     <option>Andanté Footwear</option>
@@ -36,17 +36,17 @@
         </div>    
 
         <div>
-            <label for="color">Color</label><br>
+            <label for="color">&nbsp;Color</label><br>
             <input type="text" class="form-control" placeholder="Color" formControlName="color"><br>
         </div>   
 
         <div>
-            <label for="price">Price</label>
+            <label for="price">&nbsp;Price</label>
             <input type="number" class="form-control" placeholder="Price" formControlName="price"><br>
         </div>
 
         <div>
-            <label for="status">Status</label>
+            <label for="status">&nbsp;Status</label>
             <select class="form-control" formControlName="status">
                 <option selected value=""></option>
                 <option>available</option>
@@ -55,7 +55,7 @@
         </div>
 
         <div>
-            <label for="image">Image</label>
+            <label for="image">&nbsp;Image</label>
             <input type="text" class="form-control" placeholder="Image" formControlName="image"><br>
             &nbsp;&nbsp;<img src="{{ form.value.image }}" width="200" height="">
         </div>
