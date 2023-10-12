@@ -1,0 +1,17 @@
+<table class="table table-bordered thwidthsize">
+    <thead>
+        <tr class="table">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Color</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+</table>
+
+
+<app-data *ngFor="let data of listOfData; let i = index" [data]="data" [index]="i"> </app-data>

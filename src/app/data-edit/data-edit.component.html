@@ -1,0 +1,65 @@
+<h2 *ngIf="editMode==false">Add</h2>
+<h2 *ngIf="editMode==true">Edit</h2>
+<form (ngSubmit)="onSubmit" [formGroup]="form">
+    <div>
+        <div> 
+            <label for="name">Name</label><br>
+            <input type="text" class="form-control" id="inputName" placeholder="Name" formControlName="name" >
+        </div>
+
+        <div>
+            <label for="brand">Brand</label><br>  
+            <select class="form-control" placeholder="Brand" formControlName="brand">
+                <optgroup label="PH Brand">
+                    <option>Andanté Footwear</option>
+                    <option>Inne Studios</option>
+                    <option>GVN The Label</option>
+                    <option>Hue Manila</option>
+                    <option>Cora & Bear</option>
+                    <option>Annie & Lori</option>
+                    <option>Lakat</option>
+                    <option>Renegade Folk</option>
+                    <option>Munimuni Studio</option>
+                </optgroup>
+
+                <optgroup label="Canada Brand">
+                    <option>Casca</option>
+                    <option>Vessi</option>
+                    <option>Zvelle</option>
+                    <option>Call It Spring</option>
+                    <option>Hoyden Shoes</option>
+                    <option>Matt & Nat</option>
+                    <option>John Fluevog</option>
+                </optgroup>
+            </select>
+            
+        </div>    
+
+        <div>
+            <label for="color">Color</label><br>
+            <input type="text" class="form-control" placeholder="Color" formControlName="color"><br>
+        </div>   
+
+        <div>
+            <label for="price">Price</label>
+            <input type="number" class="form-control" placeholder="Price" formControlName="price"><br>
+        </div>
+
+        <div>
+            <label for="status">Status</label>
+            <select class="form-control" formControlName="status">
+                <option selected >available</option>
+                <option>out-of-stock</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="image">Image</label>
+            <input type="text" class="form-control" placeholder="Image" formControlName="image">
+            <img src="{{ form.value.Image }}" alt="error">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success" routerLink="/datatable">Save</button>&nbsp;|
+        <button type="clear" class="btn btn-primary">Clear</button>
+    </div>    
+</form>    
