@@ -1,6 +1,6 @@
 <h2 *ngIf="editMode==false">Add</h2>
 <h2 *ngIf="editMode==true">Edit</h2>
-<form (ngSubmit)="onSubmit" [formGroup]="form">
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
     <div>
         <div> 
             <label for="name">Name</label><br>
@@ -48,7 +48,8 @@
         <div>
             <label for="status">Status</label>
             <select class="form-control" formControlName="status">
-                <option selected >available</option>
+                <option selected value=""></option>
+                <option>available</option>
                 <option>out-of-stock</option>
             </select>
         </div>
@@ -56,10 +57,10 @@
         <div>
             <label for="image">Image</label>
             <input type="text" class="form-control" placeholder="Image" formControlName="image">
-            <img src="{{ form.value.Image }}" alt="error">
+            <img src="{{ form.value.image }}" alt="">
         </div>
         <br>
-        <button type="submit" class="btn btn-success" routerLink="/datatable">Save</button>&nbsp;|
+        <button type="submit" class="btn btn-success">Save</button>&nbsp;|
         <button type="clear" class="btn btn-primary">Clear</button>
     </div>    
 </form>    

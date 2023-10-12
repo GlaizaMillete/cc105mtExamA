@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DataService } from '../data.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { v4 as glaiza } from 'uuid';
   templateUrl: './data-edit.component.html',
   styleUrls: ['./data-edit.component.css']
 })
-export class DataEditComponent implements OnInit {
+export class DataEditComponent {
 
   form! : FormGroup;
   index : number = 0;
@@ -39,8 +39,9 @@ export class DataEditComponent implements OnInit {
         editbrand = editData.Brand;
         editcolor = editData.Color;
         editprice = editData.Price;
-        editstatus = editData.Status;
         editimage = editData.Image;
+        editstatus = editData.Status;
+    
         
         this.editMode = true;
       }
@@ -52,24 +53,26 @@ export class DataEditComponent implements OnInit {
      brand: new FormControl (editbrand, [Validators.required]),
       color: new FormControl (editcolor, [Validators.required]),
       price: new FormControl (editprice, [Validators.required]),
-      status: new FormControl (editstatus, [Validators.required]),
       image: new FormControl (editimage, [Validators.required]),
+      status: new FormControl (editstatus, [Validators.required])
+     
     });
   }
 
   onSubmit(){
+    if (this.form.valid) {
     const id = this.form.value.id;
     const name = this.form.value.name;
     const brand = this.form.value.brand;
     const color = this.form.value.color;
     const price = this.form.value.price;
-    const status = this.form.value.status;
     const image = this.form.value.image;
-    const action = this.form.value.action;
+    const status = this.form.value.status;
 
-    const data: Data = new Data(
-      id, name, brand, color, price, status, image, action
-    );
+
+    const data: Data = new Data
+    ( id, name, brand, color, price, image, status );
+
 
     if(this.editMode){
       this.dataService.updateData(this.index, data)
@@ -77,9 +80,11 @@ export class DataEditComponent implements OnInit {
     else{
       this.dataService.addData(data);
     }
+
+
     this.router.navigate(['/datatable'])
+    }
+
   }
 
 }
-
-

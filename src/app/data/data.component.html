@@ -5,12 +5,11 @@
           <td>{{data?.Name}}</td>
           <td>{{data?.Brand}}</td>
           <td>{{data?.Color}}</td>
-          <td>{{data?.Price}}</td>
-          <td><img class="img-responsive" src={{data?.Image}} style="width: 100%;"></td>
+          <td>₱{{data?.Price}}</td>
+          <td><img class="img-responsive" src="{{data?.Image}}" style="width: 100%;"></td>
 
-          <td *ngIf="data?.Status=='available'"> <span style="background-color: orangered; padding: 5%; border-radius:10px;">{{data?.Status}} </span>
-          </td>
-          <td *ngIf="data?.Status=='out-of-stock'"><span style="background-color: red; padding: 5%; border-radius:10px;">{{data?.Status}}</span></td>
+          <td *ngIf="data?.Status=='available'"><span style="background-color: rgb(70, 238, 28); padding: 5%; border-radius:10px;">{{data?.Status}} </span></td>
+          <td *ngIf="data?.Status=='out-of-stock'"><span style="background-color: orangered; padding: 5%; border-radius:10px;">{{data?.Status}}</span></td>
           
 
           <td>

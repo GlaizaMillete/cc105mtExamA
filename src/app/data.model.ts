@@ -6,8 +6,7 @@ export class Data {
         public Color: string,
         public Price: string,
         public Image: string,
-        public Status: string,
-        public Action: string
+        public Status: string
         ) {
             
         }
